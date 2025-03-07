@@ -6,7 +6,7 @@
 </div>
 
 
-<img src="./img/pipeline.jpg" alt="">
+<img src="./img/fig2_pipeline.jpg" alt="">
 
 
 ## 🏆 Contributions
@@ -22,7 +22,7 @@
 ## 🛠️ Requirements and Installation
 Clone this repo to a local folder:
 ```bash
-git clone https://github.com/SkyDiffusion/SkyDiffusion-code.git
+git clone https://github.com/SkyDiffusion0307/SkyDiffusion.git
 cd SkyDiffusion-code
 ```
 
