@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="./static/image/SkyDiffusion.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="./static/images/SkyDiffusion.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>SkyDiffusion</title>
+  <link rel="icon" type="image/x-icon" href="./static/images/SkyDiffusion.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/background-video.css">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero" id="first-section">
+  <div  id="video-div" style="height: 100%; width: 100%; position: relative;">
+    <!-- 背景视频 -->
+    <video id="background-video" autoplay muted loop class="background-video">
+      <source src="./static/videos/1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- <div class="overlay"></div> -->
+
+    <h1 class="title is-1 publication-title" style="margin-top: 80px;">
+      <img id="painting_icon1" width="8%" src="./static/icons/skydiffusion.png"
+        style="vertical-align: middle; margin-right: 0px; position: relative; top: -8px">
+      <span class="highlight">SkyDiffusion</span>
+    </h1>
+    <h1 class="title publication-title" id="title-full">Leveraging BEV Paradigm for <br> Ground-to-Aerial Image Synthesis</h1>
+    <br>
+    <br><br>
+    <div class="publication-authors-container special-link">
+      <div class="links">
+        <!-- <span class="link-block"><a href="https://arxiv.org/abs/2408.01812" target="_blank">📄 Paper </a> <span style="color:black">/</span></span> -->
+        <span class="link-block"><a href="https://github.com/opendatalab/skydiffusion" target="_blank"><svg class="svg-inline--fa fa-github fa-w-16" style="color:black" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> Code</a><span style="color:black"> /</span></span>
+        <span class="link-block"><a href="https://huggingface.co/datasets/SkyDiff1109/G2A-3" target="_blank"> 🤗 Dataset</a></span>
+      </div>
+    </div>
+    <div class="publication-authors-container special-link-second"></div>
+
+      <!-- 中间描述文字 -->
+      <div class="video-caption-middle">
+        <h2 class="video-middle-h2">
+          <div class="video-middle-content">
+            <!-- <img class="video-middle-icon" src="./static/icons/Task.png" style="transform: translateX(12%);"> -->
+            <span class="video-middle-text">
+              <span class="video-title">Task Description</span> <br> 
+              Ground-to-aerial image synthesis focuses on generating realistic aerial images from corresponding ground street view
+              images while maintaining consistent content layout, simulating a top-down view.
+            </span>
+            <img class="video-middle-icon" src="./static/icons/Task.png" style="transform: translateX(12%);">
+          </div>
+        </h2>
+
+        <h2 class="video-middle-h2">
+          <div class="video-middle-content">
+            <!-- <img class="video-middle-icon" src="./static/icons/Challenge.png"> -->
+            <span class="video-middle-text">
+              <span class="video-title">Challenge</span> <br>
+              The significant viewpoint difference
+              leads to domain gaps between views, and dense urban scenes limit the visible range of street views, making this
+              cross-view generation task particularly challenging.
+            </span>
+            <img class="video-middle-icon" src="./static/icons/Challenge.png">
+          </div>
+        </h2>
+
+        <h2 class="video-middle-h2">
+          <div class="video-middle-content">
+            <!-- <img class="video-middle-icon" src="./static/icons/Method.png"> -->
+            <span class="video-middle-text">
+              <span class="video-title">Method</span><br>
+              We introduce SkyDiffusion, a novel cross-view generation method for synthesizing aerial images from
+              street view images, utilizing a diffusion model and the Bird’s-Eye View (BEV) paradigm. 
+            </span>
+            <img class="video-middle-icon" src="./static/icons/Method.png">
+          </div>
+        </h2>
+
+        <h2 class="video-middle-h2">
+          <div class="video-middle-content">
+            <!-- <img class="video-middle-icon" src="./static/icons/NewDataset.png"> -->
+            <span class="video-middle-text">
+              <span class="video-title">New Dataset</span> <br>
+              We introduce a novel dataset, Ground2Aerial-3, designed for diverse ground-to-aerial
+              image synthesis
+              applications, including disaster scene aerial synthesis, historical high-resolution satellite image synthesis, and
+              low-altitude UAV image synthesis tasks.
+            </span>
+            <img class="video-middle-icon" src="./static/icons/NewDataset.png">
+          </div>
+        </h2>
+
+
+      </div>
+
+    
+      <!-- 右下角描述文字 -->
+      <div class="video-caption-rightbottom">
+        The video shows the result of pulling up from the ground street view to the aerial perspective, like a sky-down
+        perspective. The video comes from Google Engine rendering and MatrixCity rendering
+      </div>
+
+    <!-- 左右控制按钮 -->
+    <div class="video-controls">
+      <!-- 上一视频按钮 -->
+      <button id="prev-video" class="control-button">◀</button>
+        <div class="video-thumbnails">
+        <div class="thumbnail-item" id="thumbnail-1">
+          <video class="thumbnail-video" muted loop autoplay>
+            <source src="./static/videos/1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="thumbnail-item" id="thumbnail-2">
+          <video class="thumbnail-video" muted loop autoplay>
+            <source src="./static/videos/2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!-- 下一视频按钮 -->
+      <button id="next-video" class="control-button">▶</button>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Synthesis results -->
+    <section class="section hero">
+      <h2
+        class="title is-3"
+        style="
+          width: 40%;
+          text-align: left;
+          margin-bottom: 30px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      >
+        <img
+          src="./static/icons/skydiffusion.png"
+          alt="Icon"
+          style="
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+          "
+        />Ground-to-Aerial Image Synthesis results.
+      </h2>
+      <h1
+        style="
+          width: 40%;
+          font-size: 20px;
+          line-height: 1.5;
+          text-align: justify;
+          margin: 20px auto;
+        "
+      >
+        SkyDiffusion outperforms state-of-the-art methods on cross-view datasets
+        across natural (CVUSA), suburban (CVACT), urban (VIGOR-Chicago), and
+        various application scenarios (G2A-3), generating realistic, consistent
+        aerial images.
+      </h1>
+      <div id="Tabdiv">
+        <!-- 标签行 -->
+        <div class="tab-row">
+          <div class="tab-item" id="tab-1" data-tab-name="CVACT">
+            <img src="./static/icons/CVACT.PNG" alt="CVACT" class="tab-icon" />
+            CVACT
+          </div>
+          <div class="tab-item" id="tab-2" data-tab-name="CVUSA">
+            <img src="./static/icons/CVUSA.PNG" alt="CVUSA" class="tab-icon" />
+            CVUSA
+          </div>
+          <div
+            class="tab-item"
+            id="tab-3"
+            data-tab-name="Vigor"
+            style="gap: 22px"
+          >
+            <img src="./static/icons/Vigor.PNG" alt="Vigor" class="tab-icon" />
+            Vigor
+          </div>
+          <div class="tab-item" id="tab-4" data-tab-name="G2A-3">
+            <img src="./static/icons/G2A-3.png" alt="G2A-3" class="tab-icon" />
+            G2A-3
+          </div>
+          <!-- 标签指示器 -->
+          <div class="tab-indicator"></div>
+        </div>
+      </div>
+      <!-- 显示图片 -->
+      <div id="images-container" class="images-container">
+        <button id="prev-btn" class="nav-btn">◀</button>
+        <canvas id="pdf-canvas" class="dataset-pdf"></canvas>
+        <button id="next-btn" class="nav-btn">▶</button>
+      </div>
+      <div id="img-indicator" class="img-indicator"></div>
+    </section>
+
+    <!-- End Synthesis results -->
+
+    <!-- Dataset -->
+    <section class="section hero">
+      <h2
+        class="title is-3"
+        style="
+          width: 40%;
+          text-align: left;
+          margin-bottom: 30px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      >
+        <img
+          src="./static/icons/title_dataset.png"
+          alt="Icon"
+          style="
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+          "
+        />
+        Ground2Aerial-3 Dataset
+      </h2>
+      <div
+        class="Ground2Aerial-3"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        "
+      >
+        <h1
+          style="
+            width: 40%;
+            font-size: 20px;
+            line-height: 1.5;
+            text-align: justify;
+            margin-bottom: 30px;
+          "
+        >
+          We propose Ground2Aerial-3, a multi-task cross-view synthesis dataset
+          designed to explore the performance of cross-view synthesis methods in
+          several novel scenarios. As shown in Figure 3, G2A-3 contains nearly
+          10k pairs of street-view and aerial images, covering disaster scene
+          aerial image synthesis, historical high-resolution satellite image
+          synthesis, and low-altitude UAV image synthesis. The dataset of each
+          task is randomly split into training and test sets with a ratio of
+          5:1. The ground street-view images are 1024×512, with true north
+          aligned at the center, and the aerial images are 512×512, aligned with
+          the center of the ground images.
+        </h1>
+
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5%;
+            margin-bottom: 30px;
+          "
+        >
+          <img
+            src="./static/images/G2A-3.jpg"
+            style="height: 25vh; object-fit: contain"
+          />
+          <img
+            src="./static/images/MatrixCity.png"
+            style="height: 25vh; object-fit: contain"
+          />
+        </div>
+
+        <h1
+          style="
+            width: 40%;
+            font-size: 20px;
+            line-height: 1.5;
+            text-align: justify;
+            margin-bottom: 30px;
+          "
+        >
+          For the low-altitude UAV image synthesis task, we used the virtual
+          MatrixCity environment and the UE engine to position six single-view
+          cameras at ground level with different perspectives. These include
+          four horizontal perspectives, one upward, and one downward view. The
+          six single-view images are initially rendered and then stitched into
+          panoramic data using the py360convert library. Simultaneously, at the
+          same xy position but at an altitude of 20m, a UAV is simulated with a
+          downward-facing camera to generate UAV data, forming a cross-view
+          dataset.
+        </h1>
+
+        <div class="datasetsVideos" style="margin-bottom: 30px">
+          <video
+            src="./static/datasets/aerial_video_h264.mp4"
+            autoplay
+            controls
+            loop
+            style="height: 25vh"
+          ></video>
+          <video
+            src="./static/datasets/pano_video_h264.mp4"
+            autoplay
+            controls
+            loop
+            style="height: 25vh"
+          ></video>
+        </div>
+
+        <h1
+          style="
+            width: 40%;
+            font-size: 20px;
+            line-height: 1.5;
+            text-align: justify;
+            margin-bottom: 30px;
+          "
+        >
+          The images below show sample visualizations of data from different
+          tasks.
+        </h1>
+
+        <div class="datasetsImages" style="margin-bottom: 30px">
+          <button id="datasets-prev-btn" class="datasets-nav-btn">◀</button>
+          <canvas id="datasets-canvas" class="datasets-pdf"></canvas>
+          <button id="datasets-next-btn" class="datasets-nav-btn">▶</button>
+          <div class="datasets-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End Dataset -->
+
+    <!-- Method -->
+    <section
+      class="section hero is-light"
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      "
+    >
+      <h2
+        class="title is-3"
+        style="
+          width: 40%;
+          text-align: left;
+          margin-bottom: 30px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      >
+        <img
+          src="./static/icons/title_method.png"
+          alt="Icon"
+          style="
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+          "
+        />Method
+      </h2>
+      <img
+        src="./static/images/fig2_pipeline.jpg"
+        alt="Interpolate start reference image."
+        style="width: 40vw; object-fit: contain"
+      />
+      <figcaption
+        style="
+          font-size: 14px;
+          text-align: center;
+          margin-top: 20px;
+          width: 40%;
+        "
+      >
+        <span style="font-weight: bold"
+          >Overview of the proposed SkyDiffusion framework</span
+        >, including the curved BEV transformation and BEV-controlled diffusion
+        model with light manipulation. The lower parts present the results of
+        One-to-One and Multi-to-One BEV transformations, respectively.
+      </figcaption>
+    </section>
+
+    <!-- End method -->
+
+    <!-- Evaluation -->
+    <section
+      class="section hero"
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      "
+    >
+      <h2
+        class="title is-3"
+        style="
+          width: 40%;
+          text-align: left;
+          margin-bottom: 30px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      >
+        <img
+          src="./static/icons/title_evaluation.png"
+          alt="Icon"
+          style="
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+          "
+        />Evaluation
+      </h2>
+      <h3
+        style="
+          width: 40%;
+          font-weight: bold;
+          font-size: 20px;
+          text-align: left;
+          margin-bottom: 20px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      >
+        Quantitative Evaluation of Existing datasets
+      </h3>
+
+      <h1
+        style="
+          width: 40%;
+          font-size: 20px;
+          line-height: 1.5;
+          text-align: justify;
+          margin-bottom: 30px;
+        "
+      >
+        On the suburban CVUSA and CVACT datasets, our SkyDiffusion method
+        achieved the outstanding results. Compared to state-of-the-art methods,
+        it reduced FID by <b>25.72%</b> and increased SSIM by <b>7.68%</b>,
+        demonstrating its superiority in synthesizing realistic and consistent
+        satellite images. In the urban VIGOR-Chicago dataset, SkyDiffusion
+        reduced FID by <b>14.9%</b> and improved SSIM by <b>9.41%</b> compared
+        to the state-of-the-art method.
+      </h1>
+
+      <img
+        src="./static/images/main1.png"
+        class="interpolation-image"
+        alt="Interpolate start reference image."
+        style="width: 40vw; height: auto"
+      />
+
+      <h1
+        style="
+          width: 40%;
+          font-size: 20px;
+          line-height: 1.5;
+          text-align: justify;
+          margin-bottom: 30px;
+        "
+      >
+        The tasks on the G2A-3 dataset present certain challenges; however, our
+        method achieves significant performance improvements over the commonly
+        used image-conditioned synthesis method, ControlNet. SkyDiffusion
+        reduces the FID by an average of <b>19.60%</b> and increases the SSIM by
+        an average of <b>9.90%</b>.
+      </h1>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+        "
+      >
+        <img
+          src="./static/images/main2.png"
+          alt="Interpolate start reference image."
+          style="width: 19vw; height: auto"
+        />
+        <img
+          src="./static/images/main1_2.png"
+          alt="Interpolate start reference image."
+          style="width: 19vw; height: auto"
+        />
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <h1
+          style="
+            width: 40vw;
+            font-size: 20px;
+            line-height: 1.5;
+            text-align: justify;
+            margin-bottom: 30px;
+          "
+        >
+          We conducted ablation experiments on the datasets. Compared to
+          directly using street-view images as input, the Curved-BEV method
+          improves performance across multiple metrics by transforming
+          street-view images into satellite views for domain alignment. This
+          indicates that the Curved-BEV method aids in synthesizing more
+          content-consistent satellite images. Furthermore, the Multi-to-one
+          method further improves metrics compared to the one-to-one mapping,
+          demonstrating its effectiveness in dense urban scenes.
+        </h1>
+
+        <h1
+          style="
+            width: 40vw;
+            font-size: 20px;
+            line-height: 1.5;
+            text-align: justify;
+            margin-bottom: 30px;
+          "
+        >
+          We applied an optional Light Manipulation module to align the lighting
+          conditions of the synthesized image with those of the target domain
+          image. The results indicate that Light Manipulation can effectively
+          improve SSIM and PSNR metrics. This module preserves the original
+          image content while providing more flexible lighting conditions for
+          the synthesized satellite image.
+        </h1>
+      </div>
+    </section>
+
+    <!-- End evaluation -->
+
+    <!-- Conclusion -->
+    <section class="section hero is-light">
+      <h2
+        class="title is-3"
+        style="
+          width: 40%;
+          text-align: left;
+          margin-bottom: 30px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      >
+        <img
+          src="./static/icons/title_summarise.png"
+          alt="Icon"
+          style="
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+          "
+        />
+        Conclusion
+      </h2>
+      <h1
+        style="
+          width: 40%;
+          font-size: 20px;
+          line-height: 1.5;
+          text-align: justify;
+          margin-bottom: 30px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      >
+        In this study, we introduce SkyDiffusion, a novel approach specifically
+        designed for street images to satellite images cross-view synthesis.
+        SkyDiffusion operates solely with street images as input, utilizing a
+        BEV Paradigm and diffusion models to generate satellite images.
+        SkyDiffusion achieves state-of-the-art performance in both content
+        consistency and image realism on across multiple cross-view datasets,
+        demonstrating its superior capabilities. Additionally, we introduce a
+        cross-view synthesis dataset, Ground2Aerial-3, featuring aerial image
+        synthesis tasks for multiple new scenes, providing practical value and
+        inspiration for future cross-view synthesis research.
+      </h1>
+    </section>
+
+    <!-- End Conclusion -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This page was built using the
+                <a
+                  href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                  target="_blank"
+                  >Academic Project Page Template</a
+                >
+                which was adopted from the <a
+                  href="https://nerfies.github.io"
+                  target="_blank"
+                  >Nerfies</a
+                > project page. You are free to borrow the of this website, we
+                just ask that you link back to this page in the footer. <br />
+                This website is licensed under a
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/"
+                  target="_blank"
+                  >Creative Commons Attribution-ShareAlike 4.0 International
+                  License</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Statcounter tracking code -->
+
+    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+    <script>
+      const videos = ["./static/videos/1.mp4", "./static/videos/2.mp4"];
+      let currentVideoIndex = 0;
+
+      const videoElement = document.getElementById("background-video");
+      const prevButton = document.getElementById("prev-video");
+      const nextButton = document.getElementById("next-video");
+      const videoThumbnails = document.querySelectorAll(".thumbnail-item");
+
+      function updateVideoAndThumbnails() {
+        // 更新背景视频
+        videoElement.src = videos[currentVideoIndex];
+        videoElement.play();
+
+        // 更新缩略图
+        videoThumbnails.forEach((thumbnail, index) => {
+          if (index === currentVideoIndex) {
+            thumbnail.classList.add("active");
+            thumbnail.classList.remove("inactive");
+          } else {
+            thumbnail.classList.remove("active");
+            thumbnail.classList.add("inactive");
+          }
+        });
+      }
+
+      // 点击缩略图切换视频
+      videoThumbnails.forEach((thumbnail, index) => {
+        thumbnail.addEventListener("click", () => {
+          currentVideoIndex = index;
+          updateVideoAndThumbnails();
+        });
+      });
+
+      // 切换到上一视频
+      prevButton.addEventListener("click", () => {
+        currentVideoIndex =
+          (currentVideoIndex - 1 + videos.length) % videos.length;
+        updateVideoAndThumbnails();
+      });
+
+      // 切换到下一视频
+      nextButton.addEventListener("click", () => {
+        currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+        updateVideoAndThumbnails();
+      });
+
+      // 初始化
+      updateVideoAndThumbnails();
+
+      // 获取视频元素
+      const backgroundVideo = document.getElementById("background-video");
+      const thumbnailVideos = document.querySelectorAll(".thumbnail-video");
+
+      // 同步播放和暂停状态
+      backgroundVideo.addEventListener("play", () => {
+        thumbnailVideos.forEach((video) => video.play());
+      });
+
+      backgroundVideo.addEventListener("pause", () => {
+        thumbnailVideos.forEach((video) => video.pause());
+      });
+
+      // 同步视频时间
+      backgroundVideo.addEventListener("timeupdate", () => {
+        thumbnailVideos.forEach((video) => {
+          if (Math.abs(video.currentTime - backgroundVideo.currentTime) > 0.1) {
+            video.currentTime = backgroundVideo.currentTime;
+          }
+        });
+      });
+
+      // 同步背景视频时间时设置节流（可选，用于性能优化）
+      let syncTimeout;
+      backgroundVideo.addEventListener("seeking", () => {
+        clearTimeout(syncTimeout);
+        syncTimeout = setTimeout(() => {
+          thumbnailVideos.forEach((video) => {
+            video.currentTime = backgroundVideo.currentTime;
+          });
+        }, 50);
+      });
+    </script>
+
+    <script>
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js";
+
+      const resultsPDFs = {
+        CVACT: [
+          "./static/results/CVACT1.pdf",
+          "./static/results/CVACT2.pdf",
+          "./static/results/CVACT3.pdf",
+        ],
+        CVUSA: [
+          "./static/results/CVUSA1.pdf",
+          "./static/results/CVUSA2.pdf",
+          "./static/results/CVUSA3.pdf",
+        ],
+        Vigor: [
+          "./static/results/vigor1.pdf",
+          "./static/results/vigor2.pdf",
+          "./static/results/vigor3.pdf",
+        ],
+        "G2A-3": [
+          "./static/results/UAV.pdf",
+          "./static/results/History.pdf",
+          "./static/results/disater.pdf",
+        ],
+      };
+
+      let currentImageIndex = 0;
+
+      // 异步加载 PDF 并渲染到 Canvas
+      function loadPDFAsync(src) {
+        const canvas = document.getElementById("pdf-canvas");
+        const context = canvas.getContext("2d");
+
+        pdfjsLib.getDocument(src).promise.then((pdf) => {
+          // 获取第一页
+          pdf.getPage(1).then((page) => {
+            const viewport = page.getViewport({ scale: 1.5 });
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            const renderContext = {
+              canvasContext: context,
+              viewport: viewport,
+            };
+            page.render(renderContext);
+          });
+        });
+      }
+
+      function updatePDF(tab) {
+        const pdfs = resultsPDFs[tab];
+        const pdfSrc = pdfs[currentImageIndex];
+        loadPDFAsync(pdfSrc);
+        updateImageIndicators();
+      }
+
+      function switchPDF(tab, direction) {
+        const pdfs = resultsPDFs[tab];
+        currentImageIndex =
+          (currentImageIndex + direction + pdfs.length) % pdfs.length;
+        updatePDF(tab);
+      }
+
+      const tabs = document.querySelectorAll(".tab-item");
+      const indicator = document.querySelector(".tab-indicator");
+      let activeTab = 0;
+
+      function updateTabs() {
+        tabs.forEach((tab, index) => {
+          tab.classList.remove("active");
+          if (index === activeTab) {
+            tab.classList.add("active");
+          }
+        });
+
+        const activeTabElement = tabs[activeTab];
+        const tabWidth = activeTabElement.offsetWidth;
+        const tabPosition = activeTabElement.offsetLeft;
+        const tabHeight = activeTabElement.offsetHeight;
+        indicator.style.width = `6vw`;
+        indicator.style.left = `${tabPosition}px`;
+        indicator.style.height = `${tabHeight}px`;
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+          activeTab = index;
+          currentImageIndex = 0;
+          updateTabs();
+          const activeTabName = tab.dataset.tabName;
+          createImageIndicators(resultsPDFs[activeTabName].length); // 创建白点
+          setTimeout(() => {
+            updatePDF(activeTabName);
+          }, 200);
+        });
+      });
+      document.getElementById("prev-btn").addEventListener("click", () => {
+        const activeTabName = tabs[activeTab].dataset.tabName;
+        switchPDF(activeTabName, -1);
+      });
+
+      document.getElementById("next-btn").addEventListener("click", () => {
+        const activeTabName = tabs[activeTab].dataset.tabName;
+        switchPDF(activeTabName, 1);
+      });
+      function createImageIndicators(count) {
+        const indicatorContainer = document.getElementById("img-indicator");
+        indicatorContainer.innerHTML = "";
+
+        for (let i = 0; i < count; i++) {
+          const dot = document.createElement("div");
+          dot.classList.add("indicator-dot");
+          if (i === currentImageIndex) dot.classList.add("active");
+          indicatorContainer.appendChild(dot);
+        }
+      }
+
+      // 更新指示器点样式
+      function updateImageIndicators() {
+        const dots = document.querySelectorAll(".indicator-dot");
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentImageIndex);
+        });
+      }
+
+      // 初始化更新
+      updateTabs();
+      createImageIndicators(resultsPDFs["CVACT"].length);
+      updatePDF("CVACT");
+    </script>
+
+    <script>
+      // PDF 文件数组
+      const datasetsPDFs = [
+        "./static/datasets/fig1.pdf",
+        "./static/datasets/fig2.pdf",
+        "./static/datasets/Fig3.pdf",
+      ];
+
+      let datasetsCurrentPDFIndex = 0;
+
+      // 异步加载和渲染 PDF 到 Canvas
+      function loaddatasetsPDFAsync(src) {
+        const canvas = document.getElementById("datasets-canvas");
+        const context = canvas.getContext("2d");
+
+        pdfjsLib.getDocument(src).promise.then((pdf) => {
+          // 获取第一页
+          pdf.getPage(1).then((page) => {
+            const viewport = page.getViewport({ scale: 1.5 });
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            const renderContext = {
+              canvasContext: context,
+              viewport: viewport,
+            };
+            page.render(renderContext);
+          });
+        });
+
+        // 更新分页指示器
+        updatedatasetsPagination();
+      }
+
+      // 更新分页指示器
+      function updatedatasetsPagination() {
+        const paginationContainer = document.querySelector(
+          ".datasets-pagination"
+        );
+        paginationContainer.innerHTML = ""; // 清空原有内容
+
+        datasetsPDFs.forEach((_, index) => {
+          const dot = document.createElement("div");
+          dot.className =
+            "dot" + (index === datasetsCurrentPDFIndex ? " active" : "");
+          paginationContainer.appendChild(dot);
+        });
+      }
+
+      // 切换 PDF 文件
+      function switchdatasetsPDF(direction) {
+        datasetsCurrentPDFIndex =
+          (datasetsCurrentPDFIndex + direction + datasetsPDFs.length) %
+          datasetsPDFs.length;
+        loaddatasetsPDFAsync(datasetsPDFs[datasetsCurrentPDFIndex]);
+      }
+
+      // 按钮事件监听
+      document
+        .getElementById("datasets-prev-btn")
+        .addEventListener("click", () => switchdatasetsPDF(-1));
+      document
+        .getElementById("datasets-next-btn")
+        .addEventListener("click", () => switchdatasetsPDF(1));
+
+      // 初始化加载第一个 PDF
+      loaddatasetsPDFAsync(datasetsPDFs[datasetsCurrentPDFIndex]);
+    </script>
+  </body>
+</html>

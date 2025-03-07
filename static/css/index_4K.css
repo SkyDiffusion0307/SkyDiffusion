@@ -1,0 +1,264 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+span.highlight {
+  font-size: 2em;
+  margin-left: 1%;
+  background-color: #ffffff;
+  /* background: -webkit-linear-gradient(#14bdfa, #b7eaff); */
+  -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px #ffffffc0,
+                 0 0 10px rgb(41, 177, 255); 
+}
+
+/* #painting_icon1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  margin-top: 1%;
+  width: 20%; 
+  opacity: 0.6;
+} */
+
+#title-full {
+  font-size: 6em;
+  font-weight: bold;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 2%;
+  color: transparent;
+  background: linear-gradient(to bottom, #6fbafd, #4ef3fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+    text-align: left;
+    margin-left: 2%;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+    text-align: left;
+    margin-left: 2%;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors a {
+   color: hsl(0, 0%, 0%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+/* .special-authors {
+  position: relative;
+}
+
+.special-authors::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -60px;
+  width: calc(100% + 20px);
+  height: 130px;
+  background: white;
+  clip-path: polygon(0 0, 29% 0, 28% 100%, 0 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: -1;
+} */
+/* test start */
+.publication-authors-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  position: relative;
+  padding: 20px;
+  font-size: large;
+}
+
+.authors {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+
+.author-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.author-block {
+  font-weight: bold;
+  color: hsl(0, 0%, 0%) !important;
+}
+
+.author-block a {
+  color: hsl(0, 0%, 0%) !important;
+}
+
+.author-block a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  width: 4px;
+  background-color: #00BEF3;
+  height: 70%;
+  position: absolute;
+  top: 15%;
+  left: 17%;
+  transform: translateX(-35%) rotate(20deg);
+  z-index: 1;
+}
+
+.institutions {
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-1145%);
+  gap: 10px;
+  z-index: 2;
+}
+
+.institution-block {
+  font-size: 16px;
+  font-style: italic;
+  color: hsl(0, 0%, 0%) !important;
+}
+
+.institution-block sup {
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* 底部梯形 */
+.special-authors::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: -60px;
+  width: calc(100% + 800px);
+  height: 130px;
+  background: rgb(255, 255, 255);
+  clip-path: polygon(0 0, 29% 0, 28% 100%, 0 100%);
+  box-shadow: 0 4px 8px rgba(137, 251, 255, 0.2);
+  z-index: 0;
+}
+
+.special-authors-second::before {
+  content: '';
+  position: absolute;
+  top: -125px;
+  left: -54px;
+  width: calc(100% + 20px);
+  height: 130px;
+  background: rgb(103, 202, 255);
+  clip-path: polygon(0 0, 29% 0, 28% 100%, 0 100%);
+  box-shadow: 0 4px 8px rgba(137, 251, 255, 0.2);
+  z-index: -1;
+}
+
+/* test end */
+.author-block {
+  display: inline-block;
+}
+
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  padding: 20px;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+.slider-pagination .slider-page {
+  background: #000000;
+}
+
+.eql-cntrb { 
+  font-size: smaller;
+}
+
+
+
