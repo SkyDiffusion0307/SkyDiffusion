@@ -2,7 +2,7 @@
 
 <div align="center">
 	<img src="./img/skydiffusion_icon.png" alt="" height=75>
-	<h1>Ground-to-Aerial Image Synthesis with  Diffusion Models and BEV Paradigm</h1>
+	<h1>Leveraging BEV Paradigm for Ground-to-Aerial Image Synthesis</h1>
 </div>
 
 
